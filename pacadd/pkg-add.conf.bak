@@ -1,0 +1,34 @@
+# This is the configuration file for the pkg-add repository manager
+# Change this file accordingly to dictate the settings of your repository
+# For more information see pkg-add --help
+
+# The first setting defines the name of your repository
+# DO NOT use spaces in your repository name
+# Use ONLY letters, numbers or and accepted symbol: ". + - _"
+# Change "$HOST-repo" to your desired repository name
+
+Repository_Name = "dh-repo"
+
+# Here we define the directory intended to create the repository in
+# Leaving this set to none means all installed packages will not be added to your custom repo
+# Be sure this is a directory your user has write access on
+# To share repository packages over the network install an ftp sever
+# Set the repository directory under the root of ftp server to share packages
+# If you wish to add packages to a remote repository be sure to set to the location of the remote directory
+
+Repository_Directory = "/srv/ftp/dh-repo"
+
+# In order to easily download new packages to the remote repository using pkg-add you need to setup ssh
+# If you wish to create a custom repository on your local machine ssh is not needed.
+# Ssh can be used to eaisly manage remote repositories, automatically installing packages to the repo if they do not exist
+# To enable remote repositories set Remote_Repository = "true", also be sure to specify the location of the repository server
+
+Remote_Repository = "true"
+
+# It is recommended to edit ~/.ssh/config in order to add your server to a simple hostname
+# It is also recommended to setup ssh keys in order to add packages without a password
+# pkg-add will use ssh to update the repository with new packages then install with pacman
+# set the repository server to the ip of your remote repository, or the hostname if set
+# example Repository_Server = "192.168.1.150" OR Repository_Server = "server-hostname"
+
+Repository_Server = "dh-server"
